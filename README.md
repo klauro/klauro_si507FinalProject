@@ -11,5 +11,5 @@ This program uses a tree to query users for their ingredient choice. It also obt
 Of note, the Mealdb has proven to be slightly challenging to use when searching more than one ingredient. (it will not find any recipes for 'pork' and 'carrots' but will find recipes for 'chicken' and 'potatoes') 
 
 To run program:
-Template html documents needs to be placed in a Templates directory within the same directory that holds the python coe.
-Open the 'Final Project.py' file and click run. A blank webpage will open but for now, follow the input prompts in the terminal. If successful the webpage will update to reflect the user inputs. Choose any further viewing options on the webpage and click submit.
+1. Template html documents needs to be placed in a Templates directory within the same directory that holds the python code.
+2. Open the 'Final Project.py' file and click run. A blank webpage will open but for now, follow the input prompts in the terminal. If successful the webpage will update to reflect the user inputs. Choose any further viewing options on the webpage and click submit.
