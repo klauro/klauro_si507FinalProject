@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>DASH Diet Recipe Finder</title>
+        <h1>DASH Diet Recipe Finder</h1>
+    </head>
+    <body>
+        <p>
+            <h3>DASH Diet reccomended servings (2,000 Calorie Diet)</h3>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Food Group</th>
+                    <th>Servings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for key, value in result.items() %}
+                 <tr>
+                     <td> {{ key }} </td>
+                     <td> {{ value }} </td>
+                 </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        </p>
+        <h2>Recipe Options</h2>
+        {% for recipe in recipeList %}
+            <p><li>{{ recipe }}</li></p>
+        {% endfor %}
+        <h3>Recipe</h3>
+            <table>
+                <thead>
+                </thead>
+                <tbody>
+                {% for key, value in fullRecipe.items() %}
+                 <tr>
+                     <td> {{ key }} </td>
+                     <td> {{ value }} </td>
+                 </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        <form action="/nutritionalInfo" method="POST">
+            <p>
+            <h3> Please Type Full Meal Name</h3>
+            <input name='meal' type='text'/>
+            </p>
+            <p>
+            <h3>Would you like to see the Youtube tutorial if available?</h3>
+            <input name="Option" type="radio"  value="Yes"/>Yes<br/>
+            <input name="Option" type="radio"  value="No"/>No<br/>
+            </p>
+            <p>
+            <h3>Would you like to view the nutritional data?</h3>
+            <input type="radio" name="options" value="Yes"/>Yes<br/>
+            <input type="radio" name="options" value="No"/>No<br/>
+            </p>
+            <input type ="submit" value="submit choices">
+        </form>
+    </body>
+</html>
