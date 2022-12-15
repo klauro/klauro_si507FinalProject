@@ -6,14 +6,56 @@
     <body>
         <p>
             <h3>DASH Diet reccomended servings (2,000 Calorie Diet)</h3>
-            {{servings}}
+            <table>
+                <thead>
+                  <tr>
+                    <th>Food Group</th>
+                    <th>Servings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for key, value in result.items() %}
+                 <tr>
+                     <td> {{ key }} </td>
+                     <td> {{ value }} </td>
+                 </tr>
+                {% endfor %}
+                </tbody>
+              </table>
         </p>
-        <h2>Let's get a meal recipe!</h2>
-        <h4> First select a main ingredient (chicken, pork, fish)</h4>
-            <p><input name="Main ingredient" type="text"/></p>
-        <h4> Is there an additional ingredient you'd like to search for? (starch, vegetable, spice)</h4>
-            <p><input name="Secondary ingredient" type="text"/></p>
-        </p>
-        {{Recipe_options}}
+        <h2>Recipe Options</h2>
+        {% for recipe in recipeList %}
+            <p><li>{{ recipe }}</li></p>
+        {% endfor %}
+        <h3>Recipe</h3>
+            <table>
+                <thead>
+                </thead>
+                <tbody>
+                {% for key, value in fullRecipe.items() %}
+                 <tr>
+                     <td> {{ key }} </td>
+                     <td> {{ value }} </td>
+                 </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        <form action="/nutritionalInfo" methods="POST">
+            <p>
+            <h3> Please Type Full Meal Name</h3>
+            <input name='meal' type='text'/>
+            </p>
+            <p>
+            <h3>Would you like to see the Youtube tutorial if available?</h3>
+            <input name="Options" type="radio"  value="Yes"/>Yes<br/>
+            <input name="Options" type="radio"  value="No"/>No<br/>
+            </p>
+            <p>
+            <h3>Would you like to view the nutritional data?</h3>
+            <input type="radio" name="options" value="Yes"/>Yes<br/>
+            <input type="radio" name="options" value="No"/>No<br/>
+            </p>
+            <input type ="submit" value="submit choices">
+        </form>
     </body>
 </html>
